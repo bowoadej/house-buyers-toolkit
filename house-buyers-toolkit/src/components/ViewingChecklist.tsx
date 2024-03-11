@@ -3,9 +3,9 @@ import { useState } from "react";
 export default function ViewingChecklist() {
 
     return (
-        <div id="noming">
+        <div className="viewing-checklist" id="viewing-checklist">
             <h2>Viewing Checklist</h2>
-            <div id="ViewingChecklist">
+            <div className="viewingChecklist" id="ViewingChecklist">
                 <div id="section-1">
                     <h3>Section 1: Exterior</h3>
                     <div id="id-1">
@@ -49,6 +49,14 @@ export default function ViewingChecklist() {
                     <div id="id-3">
                         <input type="checkbox" id="carbon-monoxide-alarm" name="carbon-monoxide-alarm" value="carbon-monoxide-alarm" />
                         <label>Kitchen</label>
+                    </div>
+                    <div id="id-4">
+                        <input type="checkbox" id="internet-speed" name="internet-speed" value="internet-speed" />
+                        <label>Internet Speed</label>
+                    </div>
+                    <div id="id-5">
+                        <input type="checkbox" id="planning-permission" name="planning-permission" value="planning-permission" />
+                        <label>Planning Permission</label>
                     </div>
                 </div>
             </div>
