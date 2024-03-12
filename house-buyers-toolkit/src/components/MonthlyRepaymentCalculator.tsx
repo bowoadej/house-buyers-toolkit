@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 export default function MonthlyRepaymentCalculator() {
 
     const [monthlyPayment, setMonthlyPayment] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+
 
     function calculateMonthlyMortgagePayment() {
         const principal: number = parseFloat((document.getElementById("principal") as HTMLInputElement).value);
@@ -23,32 +25,43 @@ export default function MonthlyRepaymentCalculator() {
         return calculatedPayment.toFixed(2); // Format the result to two decimal places
     }
 
-
+    function toggleActive() {
+        if (isActive) {
+            setIsActive(false);
+        } else {
+            setIsActive(true);
+        }
+    };
 
     return (
-        <div className="monthly-repayment-calculator" id="monthly-repayment-calculator">
-            <h2>Monthly Repayment Calculator</h2>
-            <div id="calculator">
-                <div id="mortgage-amount-calculator">
-                    <label>Full Mortgage Amount</label>
-                    <input type="number" id='principal' />
+        <div className="accordion-monthly-repayment-calculator" onClick={() => toggleActive()}>
+            <div className="monthly-repayment-accordion-title">Monthly Repayment Calculator<div>{isActive ? '-' : '+'}</div></div>
+            {isActive &&
+                <div className="monthly-repayment-calculator" id="monthly-repayment-calculator">
+                    <h2>Monthly Repayment Calculator</h2>
+                    <div id="calculator">
+                        <div id="mortgage-amount-calculator">
+                            <label>Full Mortgage Amount</label>
+                            <input type="number" id='principal' />
+                        </div>
+                        <div id="mortgage-amount-interest">
+                            <label>Mortgage Amount Interest</label>
+                            <input type="number" id='interest' />
+                        </div>
+                        <div id="mortgage-term-year">
+                            <label>Mortgage Term In Years</label>
+                            <input type="number" id='term' />
+                        </div>
+                        <br></br>
+                        <div id="calculator-submit-button">
+                            <button onClick={calculateMonthlyMortgagePayment}>Submit</button>
+                        </div>
+                        <div className="monthly-repayment-result">
+                            <label>Your Monthly Repayment Will Be {monthlyPayment}</label>
+                        </div>
+                    </div>
                 </div>
-                <div id="mortgage-amount-interest">
-                    <label>Mortgage Amount Interest</label>
-                    <input type="number" id='interest' />
-                </div>
-                <div id="mortgage-term-year">
-                    <label>Mortgage Term In Years</label>
-                    <input type="number" id='term' />
-                </div>
-                <br></br>
-                <div id="calculator-submit-button">
-                    <button onClick={calculateMonthlyMortgagePayment}>Submit</button>
-                </div>
-                <div className="monthly-repayment-result">
-                    <label>Your Monthly Repayment Will Be {monthlyPayment}</label>
-                </div>
-            </div>
+            }
         </div>
     )
 }

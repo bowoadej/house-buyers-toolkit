@@ -7,13 +7,16 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='body'>
         <div className='header'>
           <h1>House Buyers Toolkit</h1>
           <h3>NOTE:This information is purely for informative purposes only. It does not consitute as financial information and does not consistiute a contract. Please contact a certified financial professional for financial advice.</h3>
         </div>
       </div>
       <ViewingChecklist />
+      <br></br>
+      <MaximumBorrowingAmount />
+      <br></br>
       <MonthlyRepaymentCalculator />
     </>
   )

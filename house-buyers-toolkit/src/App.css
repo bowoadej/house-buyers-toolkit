@@ -1,23 +1,22 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
 body {
-  margin: 0;
+  max-width: 100%;
 }
 
 .header {
   position: top;
   background-color: blue;
   color: lightcyan;
-  height: 30%;
+  width: 100vw;
 }
 
 .viewing-checklist {
-  background-color: lightblue;
+  display: grid;
 }
 
 .viewingChecklist {
@@ -43,6 +42,20 @@ li {
 }
 
 .monthly-repayment-calculator {
-  background-color: red;
   margin-top: -1.5%;
+}
+
+.accordion-monthly-repayment-calculator {
+  outline: 5px solid lightblue;
+  display: inline-flex;
+}
+
+.accordion-item-viewing-checklist {
+  outline: 5px solid lightblue;
+  display: inline-flex;
+}
+
+.accordion-item-maximum-borrowing-amount {
+  outline: 5px solid lightblue;
+  display: inline-flex;
 }
