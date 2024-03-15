@@ -12,14 +12,14 @@ function App() {
           <h1>House Buyers Toolkit</h1>
           <h3>NOTE:This information is purely for informative purposes only. It does not consitute as financial information and does not consistiute a contract. Please contact a certified financial professional for financial advice.</h3>
         </div>
-      </div>
-      <br></br>
-      <div className='content'>
-        <ViewingChecklist />
         <br></br>
-        <MaximumBorrowingAmount />
-        <br></br>
-        <MonthlyRepaymentCalculator />
+        <div className='content'>
+          <ViewingChecklist />
+          <br></br>
+          <MaximumBorrowingAmount />
+          <br></br>
+          <MonthlyRepaymentCalculator />
+        </div>
       </div>
     </>
   )

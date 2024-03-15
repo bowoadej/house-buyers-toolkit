@@ -9,13 +9,14 @@ body {
 
 .header {
   background-color: blue;
+  position: top;
   color: white;
   width: 100vw;
-  height: 20vw;
+  height: 12vw;
 }
 
+
 .content {
-  align-items: center;
   width: 50vw;
   height: 30vw;
 }
@@ -52,15 +53,19 @@ li {
 
 .accordion-monthly-repayment-calculator {
   outline: 5px solid lightblue;
-  display: inline-flex;
+  border-radius: 1%;
 }
 
 .accordion-item-viewing-checklist {
   outline: 5px solid lightblue;
-  display: inline-flex;
+  border-radius: 1%;
 }
 
 .accordion-item-maximum-borrowing-amount {
   outline: 5px solid lightblue;
-  display: inline-flex;
+  border-radius: 1%;
+}
+
+.footer {
+  position: relative;
 }
