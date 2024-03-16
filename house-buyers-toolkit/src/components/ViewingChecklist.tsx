@@ -14,7 +14,7 @@ export default function ViewingChecklist() {
 
     return (
         <div className="accordion-viewing-checklist" onClick={() => toggleActive()}>
-            <div className="accordion-item-viewing-checklist">Viewing Checklist<div>{isActive ? '-' : '+'}</div>
+            <div className="accordion-item-viewing-checklist">Viewing Checklist<div className="accordion-icon">{isActive ? '-' : '+'}</div>
                 {isActive &&
                     <div className="viewing-checklist" id="viewing-checklist">
                         <h2>Viewing Checklist</h2>

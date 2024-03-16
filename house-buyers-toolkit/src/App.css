@@ -4,6 +4,7 @@
 }
 
 body {
+  position: relative;
   max-width: 100%;
 }
 
@@ -19,6 +20,7 @@ body {
 .content {
   width: 50vw;
   height: 30vw;
+  margin-left: 20%;
 }
 
 .viewing-checklist {
@@ -53,19 +55,34 @@ li {
 
 .accordion-monthly-repayment-calculator {
   outline: 5px solid lightblue;
-  border-radius: 1%;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 .accordion-item-viewing-checklist {
   outline: 5px solid lightblue;
-  border-radius: 1%;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 .accordion-item-maximum-borrowing-amount {
   outline: 5px solid lightblue;
-  border-radius: 1%;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-bottom: 2%;
 }
 
 .footer {
-  position: relative;
+  position: absolute;
+  bottom: -10;
+  width: 100%;
+  height: 2.5rem;
+  padding-left: 18%;
+
+}
+
+.accordion-icon {
+  float: right;
 }

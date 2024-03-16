@@ -19,6 +19,8 @@ function App() {
           <MaximumBorrowingAmount />
           <br></br>
           <MonthlyRepaymentCalculator />
+          <br></br>
+          <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe</a></div>
         </div>
       </div>
     </>
