@@ -1,8 +1,3 @@
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 body {
   position: relative;
   max-width: 100%;
@@ -10,10 +5,10 @@ body {
 
 .header {
   background-color: blue;
-  position: top;
   color: white;
   width: 100vw;
   height: 12vw;
+  padding-bottom: 20px;
 }
 
 
@@ -23,13 +18,6 @@ body {
   margin-left: 20%;
 }
 
-.viewing-checklist {
-  display: grid;
-}
-
-.viewingChecklist {
-  position: sticky;
-}
 
 .navigation-bar {
   background-color: gray;
@@ -85,4 +73,5 @@ li {
 
 .accordion-icon {
   float: right;
+  padding-right: 2%;
 }

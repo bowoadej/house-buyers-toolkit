@@ -59,10 +59,9 @@ export default function MaximumBorrowingAmount() {
 
     return (
         <div className="accordion-maximum-borrowing-amount" onClick={() => toggleActive()}>
-            <div className="accordion-item-maximum-borrowing-amount" >Maximum Borrowing Amount <div>{isActive ? '-' : '+'}</div>
+            <div className="accordion-item-maximum-borrowing-amount" ><h2>Maximum Borrowing Amount <div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2>
                 {isActive &&
                     <div className='maximum-borrowing-amount-calculator'>
-                        <h2>Maximum Borrowing Calculator</h2>
                         <div className='maximum-borrowing-amount'>
                             <div id='no-of-buyers'>
                                 <h3>How Many Buyers Are Involved?</h3>
