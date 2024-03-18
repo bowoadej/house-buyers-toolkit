@@ -42,15 +42,17 @@ export default function MonthlyRepaymentCalculator() {
                 <div className="monthly-repayment-calculator" id="monthly-repayment-calculator">
                     <div id="calculator">
                         <div id="mortgage-amount-calculator">
-                            <label>Full Mortgage Amount</label>
+                            <label htmlFor='principal'>Full Mortgage Amount:</label>
                             <input type="number" id='principal' />
                         </div>
+                        <br></br>
                         <div id="mortgage-amount-interest">
-                            <label>Mortgage Amount Interest</label>
+                            <label htmlFor='intrest'>Mortgage Amount Interest:</label>
                             <input type="number" id='interest' />
                         </div>
+                        <br></br>
                         <div id="mortgage-term-year">
-                            <label>Mortgage Term In Years</label>
+                            <label htmlFor='term'>Mortgage Term In Years:</label>
                             <input type="number" id='term' />
                         </div>
                         <br></br>
