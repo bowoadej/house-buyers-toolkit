@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Urbanist-Bold';
+    src: local('Urbanist-Bold'),
+        url('./fonts/Urbanist-Bold.tff') format('.woff'),
+}

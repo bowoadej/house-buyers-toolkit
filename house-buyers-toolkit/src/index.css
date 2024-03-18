@@ -31,8 +31,21 @@ body {
 }
 
 h1 {
+  font-family: Urbanist-bold;
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-family: Urbanist-SemiBold;
+}
+
+h3 {
+  font-family: Urbanist-SemiBold;
+}
+
+p {
+  font-family: Urbanist-Regular;
 }
 
 button {

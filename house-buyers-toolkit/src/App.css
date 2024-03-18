@@ -75,3 +75,21 @@ li {
   float: right;
   padding-right: 2%;
 }
+
+@font-face {
+  font-family: 'Urbanist-Bold';
+  src: local('Urbanist-Bold'),
+    url('./fonts/Urbanist-Bold.woff2') format('woff2'),
+}
+
+@font-face {
+  font-family: 'Urbanist-Regular';
+  src: local('Urbanist-Regular'),
+    url('./fonts/Urbanist-Regular.woff2') format('woff2'),
+}
+
+@font-face {
+  font-family: 'Urbanist-SemiBold';
+  src: local('Urbanist-SemiBold'),
+    url('./fonts/Urbanist-SemiBold.woff2') format('woff2'),
+}

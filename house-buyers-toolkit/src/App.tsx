@@ -1,4 +1,7 @@
 import './App.css'
+import "./fonts/Urbanist-Bold.woff2"
+import "./fonts/Urbanist-Regular.woff2"
+import "./fonts/Urbanist-SemiBold.woff2"
 import ViewingChecklist from './components/ViewingChecklist'
 import Navigation from './components/Navigation'
 import MonthlyRepaymentCalculator from './components/MonthlyRepaymentCalculator'
