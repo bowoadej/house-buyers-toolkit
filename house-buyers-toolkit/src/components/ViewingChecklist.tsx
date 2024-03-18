@@ -4,6 +4,8 @@ export default function ViewingChecklist() {
 
     const [isActive, setIsActive] = useState(false);
 
+    const divElement = document.getElementById("accordion-item-viewing-checklist");
+
     function toggleActive() {
         if (isActive) {
             setIsActive(false);
@@ -13,10 +15,12 @@ export default function ViewingChecklist() {
     };
 
     return (
-        <div className="accordion-viewing-checklist" onClick={() => toggleActive()}>
-            <div className="accordion-item-viewing-checklist"><h2>House Viewing Checklist<div className="accordion-icon">{isActive ? '-' : '+'}</div></h2>
+        <div className="accordion-viewing-checklist">
+            <div className="accordion-item-viewing-checklist" id="accordion-item-viewing-checklist">
+                <div className="accordion-title" onClick={() => toggleActive()}><h2>House Viewing Checklist<div className="accordion-icon">{isActive ? '-' : '+'}</div></h2></div>
                 {isActive &&
-                    <div className="viewing-checklist" id="viewing-checklist">
+                    <div className="viewing-checklist" id="viewing-checklist" >
+
                         <div className="checklist" id="ViewingChecklist">
                             <div id="section-1">
                                 <h3>Section 1: Exterior</h3>

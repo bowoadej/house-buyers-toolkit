@@ -36,8 +36,8 @@ export default function MonthlyRepaymentCalculator() {
     };
 
     return (
-        <div className="accordion-monthly-repayment-calculator" onClick={() => toggleActive()}>
-            <div className="monthly-repayment-accordion-title"><h2>Monthly Repayment Calculator<div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
+        <div className="accordion-monthly-repayment-calculator" >
+            <div className="monthly-repayment-accordion-title" onClick={() => toggleActive()}><h2>Monthly Repayment Calculator<div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
             {isActive &&
                 <div className="monthly-repayment-calculator" id="monthly-repayment-calculator">
                     <div id="calculator">
