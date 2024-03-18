@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Disclaimer from './Disclaimer';
 
 export default function MaximumBorrowingAmount() {
     const [NumberofBuyers, setNumberofBuyers] = useState(0);
@@ -82,6 +83,7 @@ export default function MaximumBorrowingAmount() {
                                 <input type='number' id='secondPersonIncome' />
                             </div>
                         }
+                        <Disclaimer />
                         <div className='submit'>
                             <button onClick={handleClick}>Submit</button>
                         </div>

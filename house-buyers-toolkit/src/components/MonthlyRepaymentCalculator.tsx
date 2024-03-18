@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import Disclaimer from './Disclaimer';
 
 export default function MonthlyRepaymentCalculator() {
 
     const [monthlyPayment, setMonthlyPayment] = useState(0);
     const [isActive, setIsActive] = useState(false);
+    const [showMonthlyAmount, setMonthlyAmount] = useState(false);
 
 
     function calculateMonthlyMortgagePayment() {
@@ -21,7 +23,7 @@ export default function MonthlyRepaymentCalculator() {
         // Calculate the monthly payment
         const calculatedPayment = (principal * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTermInMonths));
         setMonthlyPayment(parseFloat(calculatedPayment.toFixed(2)))
-
+        setMonthlyAmount(true);
         return calculatedPayment.toFixed(2); // Format the result to two decimal places
     }
 
@@ -52,12 +54,15 @@ export default function MonthlyRepaymentCalculator() {
                             <input type="number" id='term' />
                         </div>
                         <br></br>
+                        <Disclaimer />
                         <div id="calculator-submit-button">
                             <button onClick={calculateMonthlyMortgagePayment}>Submit</button>
                         </div>
-                        <div className="monthly-repayment-result">
-                            <label>Your Monthly Repayment Will Be {monthlyPayment}</label>
-                        </div>
+                        {showMonthlyAmount &&
+                            <div className="monthly-repayment-result">
+                                <label>Your Monthly Repayment Will Be {monthlyPayment}</label>
+                            </div>
+                        }
                     </div>
                 </div>
             }
