@@ -40,6 +40,7 @@ export default function MonthlyRepaymentCalculator() {
             <div className="monthly-repayment-accordion-title" onClick={() => toggleActive()}><h2>Monthly Repayment Calculator<div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
             {isActive &&
                 <div className="monthly-repayment-calculator" id="monthly-repayment-calculator">
+                    <p>Enter your full mortgage amount, mortgage amount intrest rate and mortgage term in years below. </p>
                     <div id="calculator">
                         <div id="mortgage-amount-calculator">
                             <label htmlFor='principal'>Full Mortgage Amount:</label>
@@ -47,7 +48,7 @@ export default function MonthlyRepaymentCalculator() {
                         </div>
                         <br></br>
                         <div id="mortgage-amount-interest">
-                            <label htmlFor='intrest'>Mortgage Amount Interest:</label>
+                            <label htmlFor='intrest'>Mortgage Interest Rate:</label>
                             <input type="number" id='interest' />
                         </div>
                         <br></br>

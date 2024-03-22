@@ -47,6 +47,10 @@ p {
   font-family: Urbanist-Regular;
 }
 
+label {
+  font-family: Urbanist-Regular;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
