@@ -1,10 +1,30 @@
 import { useState } from "react";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import { useContext } from "react";
+import { PdfContext } from "./FeatureFlags";
 
 export default function ViewingChecklist() {
 
     const [isActive, setIsActive] = useState(false);
-
     const divElement = document.getElementById("accordion-item-viewing-checklist");
+
+    const pdfValue = useContext(PdfContext);
+
+    function generatePDF() {
+        const content = document.getElementById('viewing-checklist')!;
+        const text = content.innerText;
+        const textArea = content.querySelector('textarea')!;
+        const valueOfTextArea = textArea.value;
+
+
+        html2canvas(content).then((canvas) => {
+            const doc = new jsPDF();
+            doc.text(text, 10, 10);
+            doc.text(valueOfTextArea, 30, 30);
+            doc.save('property_viewing_checklist_report.pdf');
+        });
+    }
 
     function toggleActive() {
         if (isActive) {
@@ -13,6 +33,8 @@ export default function ViewingChecklist() {
             setIsActive(true);
         }
     };
+
+
 
     return (
         <div className="accordion-viewing-checklist">
@@ -36,6 +58,12 @@ export default function ViewingChecklist() {
                                     <input type="checkbox" id="garden" name="garden" value="garden" />
                                     <label>Garden</label>
                                 </div>
+                                <br></br>
+                                <div id="section-1-textarea">
+                                    <label htmlFor="section-one-text-area">Comments:</label>
+                                    <br></br>
+                                    <textarea id="section-one-text-area"></textarea>
+                                </div>
                             </div>
                             <div id="section-2">
                                 <h3>Section 2: Interior</h3>
@@ -50,6 +78,12 @@ export default function ViewingChecklist() {
                                 <div id="id-3">
                                     <input type="checkbox" id="kitchen" name="kitchen" value="kitchen" />
                                     <label>Kitchen</label>
+                                </div>
+                                <br></br>
+                                <div id="section-2-textarea">
+                                    <label htmlFor="section-two-text-area">Comments:</label>
+                                    <br></br>
+                                    <textarea id="section-two-text-area"></textarea>
                                 </div>
                             </div>
                             <div id="section-2">
@@ -74,7 +108,16 @@ export default function ViewingChecklist() {
                                     <input type="checkbox" id="planning-permission" name="planning-permission" value="planning-permission" />
                                     <label>Planning Permission</label>
                                 </div>
-                            </div>
+                                <br></br>
+                                <div id="section-3-textarea">
+                                    <label htmlFor="section-three-text-area">Comments:</label>
+                                    <br></br>
+                                    <textarea id="section-three-text-area"></textarea>
+                                </div>
+                            </div> {pdfValue &&
+                                <button onClick={generatePDF}>Generate PDF</button>
+                            }
+
                         </div>
                     </div>
                 }
