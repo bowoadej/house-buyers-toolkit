@@ -12,18 +12,24 @@ export default function ViewingChecklist() {
     const pdfValue = useContext(FeatureFlagsContext).PdfContext;
 
     function generatePDF() {
-        const content = document.getElementById('viewing-checklist')!;
-        const text = content.innerText;
-        const textArea = content.querySelector('textarea')!;
-        const valueOfTextArea = textArea.value;
+        const sectionOneContent = document.getElementById('section-1')!.innerText;
+        const sectionTwoContent = document.getElementById('section-2')!.innerText;
+        const sectionThreeContent = document.getElementById('section-3')!.innerText;
+        const textareaOne = (document.getElementById('section-one-text-area') as HTMLInputElement).value;
+        const textareaTwo = (document.getElementById('section-two-text-area') as HTMLInputElement).value;
+        const textareaThree = (document.getElementById('section-three-text-area') as HTMLInputElement).value;
 
 
-        html2canvas(content).then((canvas) => {
-            const doc = new jsPDF();
-            doc.text(text, 10, 10);
-            doc.text(valueOfTextArea, 30, 30);
-            doc.save('property_viewing_checklist_report.pdf');
-        });
+
+        const pdf = new jsPDF();
+        pdf.text([
+            "Section 1: Exterior Comments", textareaOne,
+            "Section 2: Interior Comments", textareaTwo,
+            "Section 3: Miscellaneous", textareaThree
+        ]
+            , 10, 10);
+        pdf.save('property_viewing_checklist_report.pdf');
+
     }
 
     function toggleActive() {
@@ -90,7 +96,7 @@ export default function ViewingChecklist() {
                                     </div>
                                 }
                             </div>
-                            <div id="section-2">
+                            <div id="section-3">
                                 <h3>Section 3: Miscellaneous</h3>
                                 <div id="id-1">
                                     <input type="checkbox" id="burglar-alarm" name="burglar-alarm" value="burglar-alarm" />
@@ -120,7 +126,7 @@ export default function ViewingChecklist() {
                                         <textarea id="section-three-text-area"></textarea>
                                     </div>
                                 }
-                            </div> {pdfValue &&
+                            </div> <br></br>{pdfValue &&
                                 <button onClick={generatePDF}>Generate PDF</button>
                             }
 
