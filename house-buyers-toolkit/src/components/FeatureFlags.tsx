@@ -1,3 +1,9 @@
 import { createContext } from "react";
 
-export const PdfContext = createContext(false);
+export const FeatureFlagsContext = createContext({
+    PdfContext: false,
+    renderViewingChecklist: true,
+    renderMaximumBorrowingAmount: true,
+    renderMonthlyRepaymentCalculator: true,
+    otherFeature: true, // Example for another feature flag
+})

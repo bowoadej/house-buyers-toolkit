@@ -2,14 +2,14 @@ import { useState } from "react";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { useContext } from "react";
-import { PdfContext } from "./FeatureFlags";
+import { FeatureFlagsContext } from "./FeatureFlags";
 
 export default function ViewingChecklist() {
 
     const [isActive, setIsActive] = useState(false);
     const divElement = document.getElementById("accordion-item-viewing-checklist");
 
-    const pdfValue = useContext(PdfContext);
+    const pdfValue = useContext(FeatureFlagsContext).PdfContext;
 
     function generatePDF() {
         const content = document.getElementById('viewing-checklist')!;
@@ -59,11 +59,13 @@ export default function ViewingChecklist() {
                                     <label>Garden</label>
                                 </div>
                                 <br></br>
-                                <div id="section-1-textarea">
-                                    <label htmlFor="section-one-text-area">Comments:</label>
-                                    <br></br>
-                                    <textarea id="section-one-text-area"></textarea>
-                                </div>
+                                {pdfValue &&
+                                    <div id="section-1-textarea">
+                                        <label htmlFor="section-one-text-area">Comments:</label>
+                                        <br></br>
+                                        <textarea id="section-one-text-area"></textarea>
+                                    </div>
+                                }
                             </div>
                             <div id="section-2">
                                 <h3>Section 2: Interior</h3>
@@ -80,11 +82,13 @@ export default function ViewingChecklist() {
                                     <label>Kitchen</label>
                                 </div>
                                 <br></br>
-                                <div id="section-2-textarea">
-                                    <label htmlFor="section-two-text-area">Comments:</label>
-                                    <br></br>
-                                    <textarea id="section-two-text-area"></textarea>
-                                </div>
+                                {pdfValue &&
+                                    < div id="section-2-textarea">
+                                        <label htmlFor="section-two-text-area">Comments:</label>
+                                        <br></br>
+                                        <textarea id="section-two-text-area"></textarea>
+                                    </div>
+                                }
                             </div>
                             <div id="section-2">
                                 <h3>Section 3: Miscellaneous</h3>
@@ -109,11 +113,13 @@ export default function ViewingChecklist() {
                                     <label>Planning Permission</label>
                                 </div>
                                 <br></br>
-                                <div id="section-3-textarea">
-                                    <label htmlFor="section-three-text-area">Comments:</label>
-                                    <br></br>
-                                    <textarea id="section-three-text-area"></textarea>
-                                </div>
+                                {pdfValue &&
+                                    <div id="section-3-textarea">
+                                        <label htmlFor="section-three-text-area">Comments:</label>
+                                        <br></br>
+                                        <textarea id="section-three-text-area"></textarea>
+                                    </div>
+                                }
                             </div> {pdfValue &&
                                 <button onClick={generatePDF}>Generate PDF</button>
                             }

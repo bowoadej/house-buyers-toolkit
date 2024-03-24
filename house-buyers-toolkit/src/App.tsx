@@ -7,7 +7,15 @@ import Navigation from './components/Navigation'
 import MonthlyRepaymentCalculator from './components/MonthlyRepaymentCalculator'
 import MaximumBorrowingAmount from './components/MaximumBorrowingAmount'
 import Disclaimer from './components/Disclaimer'
+import { FeatureFlagsContext } from "../src/components/FeatureFlags";
+import { useContext } from 'react'
+
 function App() {
+
+  const checklist = useContext(FeatureFlagsContext).renderViewingChecklist;
+  const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
+  const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
+
 
   return (
     <>
@@ -18,11 +26,15 @@ function App() {
         </div>
         <br></br>
         <div className='content'>
-          <ViewingChecklist />
-          <br></br>
-          <MaximumBorrowingAmount />
-          <br></br>
-          <MonthlyRepaymentCalculator />
+          {checklist &&
+            <ViewingChecklist />
+          }
+          {maximumborrowingamount &&
+            <MaximumBorrowingAmount />
+          }
+          {calculator &&
+            <MonthlyRepaymentCalculator />
+          }
           <br></br>
           <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe</a></div>
           <br></br>
