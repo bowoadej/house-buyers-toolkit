@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Disclaimer from './Disclaimer';
 
 export default function MaximumBorrowingAmount() {
@@ -61,7 +61,7 @@ export default function MaximumBorrowingAmount() {
     return (
         <div className="accordion-maximum-borrowing-amount" >
             <div className="accordion-item-maximum-borrowing-amount" >
-                <div className='accordion-title' onClick={() => toggleActive()}><h2>Maximum Borrowing Amount <div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
+                <div data-testid="accordionTitle" className='accordion-title' onClick={() => toggleActive()}><h2>Maximum Borrowing Amount <div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
                 {isActive &&
                     <div className='maximum-borrowing-amount-calculator'>
                         <div className='maximum-borrowing-amount'>
