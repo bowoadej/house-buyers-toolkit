@@ -1,4 +1,13 @@
 module.exports = {
+    transform: {
+        '^.+\\\\\\\\.tsx?$': 'ts-jest',
+    },
     presets:
-        ['@babel/preset-env', { targets: { node: 'current' } }, "@babel/preset-react", '@babel/preset-typescript'],
-}
+        ['@babel/preset-env',
+            {
+                targets: {
+                    node: 'current',
+                },
+            },]
+};
+
