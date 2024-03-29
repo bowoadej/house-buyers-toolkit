@@ -59,7 +59,7 @@ export default function MaximumBorrowingAmount() {
     };
 
     return (
-        <div className="accordion-maximum-borrowing-amount" >
+        <div className="accordion-maximum-borrowing-amount" data-testid="maximum-amount-container">
             <div className="accordion-item-maximum-borrowing-amount" >
                 <div data-testid="accordionTitle" className='accordion-title' onClick={() => toggleActive()}><h2>Maximum Borrowing Amount <div className='accordion-icon'>{isActive ? '-' : '+'}</div></h2></div>
                 {isActive &&
