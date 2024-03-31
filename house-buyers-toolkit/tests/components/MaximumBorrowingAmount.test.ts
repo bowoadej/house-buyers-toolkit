@@ -1,7 +1,7 @@
 
 import { describe, expect,/* jest,*/ test } from '@jest/globals';
 //import { render } from '@testing-library/react';
-import MaximumBorrowingAmount from '../src/components/MaximumBorrowingAmount';
+import MaximumBorrowingAmount from '../../src/components/MaximumBorrowingAmount';
 
 /*jest.mock('../src/components/MaximumBorrowingAmount', () => {
     return { MaximumBorrowingAmount };

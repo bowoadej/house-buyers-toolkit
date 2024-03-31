@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="body"
+>
+  <div
+    className="header"
+  >
+    <h1>
+      House Buyers Toolkit
+    </h1>
+    <p>
+      NOTE:This information is purely for informative purposes only. It does not consitute as financial information and does not consistiute a contract. 
+      <br />
+       Please contact a certified financial professional for financial advice.
+    </p>
+  </div>
+  <br />
+  <div
+    className="content"
+  >
+    <div
+      className="accordion-viewing-checklist"
+    >
+      <div
+        className="accordion-item-viewing-checklist"
+        id="accordion-item-viewing-checklist"
+      >
+        <div
+          className="accordion-title"
+          onClick={[Function]}
+        >
+          <h2>
+            House Viewing Checklist
+            <div
+              className="accordion-icon"
+            >
+              +
+            </div>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      className="accordion-maximum-borrowing-amount"
+      data-testid="maximum-amount-container"
+    >
+      <div
+        className="accordion-item-maximum-borrowing-amount"
+      >
+        <div
+          className="accordion-title"
+          data-testid="accordionTitle"
+          onClick={[Function]}
+        >
+          <h2>
+            Maximum Borrowing Amount 
+            <div
+              className="accordion-icon"
+            >
+              +
+            </div>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      className="accordion-monthly-repayment-calculator"
+    >
+      <div
+        className="monthly-repayment-accordion-title"
+        onClick={[Function]}
+      >
+        <h2>
+          Monthly Repayment Calculator
+          <div
+            className="accordion-icon"
+          >
+            +
+          </div>
+        </h2>
+      </div>
+    </div>
+    <br />
+    <div
+      className="footer"
+    >
+      A Toolkit Created By 
+      <a
+        href="https://bowoadej.com"
+      >
+        Bowo Adejuyigbe
+      </a>
+    </div>
+    <br />
+    <p>
+      NOTE:This information is purely for informative purposes only. It does not consitute as financial information and does not consistiute a contract. 
+      <br />
+       Please contact a certified financial professional for financial advice.
+    </p>
+  </div>
+</div>
+`;

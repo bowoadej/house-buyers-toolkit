@@ -1,20 +1,15 @@
 import { useState } from "react";
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import { useContext } from "react";
 import { FeatureFlagsContext } from "./FeatureFlags";
 
 export default function ViewingChecklist() {
 
     const [isActive, setIsActive] = useState(false);
-    const divElement = document.getElementById("accordion-item-viewing-checklist");
 
     const pdfValue = useContext(FeatureFlagsContext).PdfContext;
 
     function generatePDF() {
-        const sectionOneContent = document.getElementById('section-1')!.innerText;
-        const sectionTwoContent = document.getElementById('section-2')!.innerText;
-        const sectionThreeContent = document.getElementById('section-3')!.innerText;
         const textareaOne = (document.getElementById('section-one-text-area') as HTMLInputElement).value;
         const textareaTwo = (document.getElementById('section-two-text-area') as HTMLInputElement).value;
         const textareaThree = (document.getElementById('section-three-text-area') as HTMLInputElement).value;
