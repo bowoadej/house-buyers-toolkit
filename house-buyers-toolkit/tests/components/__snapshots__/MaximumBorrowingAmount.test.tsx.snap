@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check Maximum Borrowing Amount Calculator component enders correctly 1`] = `
+<div
+  className="accordion-maximum-borrowing-amount"
+  data-testid="maximum-amount-container"
+>
+  <div
+    className="accordion-item-maximum-borrowing-amount"
+  >
+    <div
+      className="accordion-title"
+      data-testid="accordionTitle"
+      onClick={[Function]}
+    >
+      <h2>
+        Maximum Borrowing Amount 
+        <div
+          className="accordion-icon"
+        >
+          +
+        </div>
+      </h2>
+    </div>
+  </div>
+</div>
+`;

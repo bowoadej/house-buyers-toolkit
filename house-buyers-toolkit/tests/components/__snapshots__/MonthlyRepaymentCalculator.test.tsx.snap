@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check Monthly Repayment Calculator component enders correctly 1`] = `
+<div
+  className="accordion-monthly-repayment-calculator"
+>
+  <div
+    className="monthly-repayment-accordion-title"
+    onClick={[Function]}
+  >
+    <h2>
+      Monthly Repayment Calculator
+      <div
+        className="accordion-icon"
+      >
+        +
+      </div>
+    </h2>
+  </div>
+</div>
+`;
