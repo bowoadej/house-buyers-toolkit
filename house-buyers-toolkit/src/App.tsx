@@ -15,7 +15,7 @@ function App() {
   const checklist = useContext(FeatureFlagsContext).renderViewingChecklist;
   const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
   const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
-
+  const navigation = useContext(FeatureFlagsContext).renderNavigationBar;
 
   return (
     <>
@@ -26,6 +26,10 @@ function App() {
         </div>
         <br></br>
         <div className='content'>
+          {
+            navigation &&
+            <Navigation />
+          }
           {checklist &&
             <ViewingChecklist />
           }
