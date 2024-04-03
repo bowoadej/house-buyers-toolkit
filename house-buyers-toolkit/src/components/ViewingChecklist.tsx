@@ -23,9 +23,9 @@ export default function ViewingChecklist() {
 
         const pdf = new jsPDF();
         pdf.text([
-            "Section 1: Exterior Comments", textareaOne,
-            "Section 2: Interior Comments", textareaTwo,
-            "Section 3: Miscellaneous", textareaThree
+            "Section 1: Exterior Comments \n Driveway \n Patio \n Garden", textareaOne,
+            "Section 2: Interior Comments \n Bedroom \n Bathroom \n Kitchen", textareaTwo,
+            "Section 3: Miscellaneous \n Bedroom \n Kitchen \n Internet Speed \n Planning Permission", textareaThree
         ]
             , 10, 10);
         pdf.save('property_viewing_checklist_report.pdf');
