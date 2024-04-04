@@ -2,6 +2,8 @@ import { useState } from "react";
 import jsPDF from 'jspdf';
 import { useContext } from "react";
 import { FeatureFlagsContext } from "./FeatureFlags";
+import { text } from "stream/consumers";
+
 
 export default function ViewingChecklist() {
 
@@ -17,12 +19,33 @@ export default function ViewingChecklist() {
 
 
         const pdf = new jsPDF();
-        pdf.text([
-            "Section 1: Exterior Comments", textareaOne,
-            "Section 2: Interior Comments", textareaTwo,
-            "Section 3: Miscellaneous", textareaThree
-        ]
-            , 10, 10);
+
+        //Title
+        pdf.setFontSize(50)
+        pdf.text("House Buyers Toolkit", 10, 20);
+
+        //Section One
+        pdf.setFontSize(22);
+        pdf.text("Section One:", 20, 40);
+
+        pdf.setFontSize(16)
+        pdf.text([sectionOneContent, textareaOne], 20, 50);
+
+        //Section Two
+        pdf.setFontSize(22)
+        pdf.text("Section Two:", 20, 70);
+
+        pdf.setFontSize(16)
+        pdf.text([sectionTwoContent, textareaTwo], 20, 80);
+
+        //Section Three
+
+        pdf.setFontSize(22)
+        pdf.text("Section Three:", 20, 100);
+
+        pdf.setFontSize(16)
+        pdf.text([sectionThreeContent, textareaThree], 20, 110);
+
         pdf.save('property_viewing_checklist_report.pdf');
 
     }
