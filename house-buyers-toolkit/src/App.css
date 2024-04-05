@@ -108,3 +108,36 @@ textarea {
   src: local('Urbanist-SemiBold'),
     url('./fonts/Urbanist-SemiBold.woff2') format('woff2'),
 }
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 12;
+  background-color: gray;
+}
+
+.login-form {
+  max-width: 600px;
+  padding: 10px;
+  background-color: black;
+  z-index: 1;
+}
+
+.login-form input[type=text],
+.login-form input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.login-form input[type=text]:focus,
+.login-form input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}

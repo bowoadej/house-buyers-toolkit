@@ -12,9 +12,12 @@ export default function ViewingChecklist() {
     const pdfValue = useContext(FeatureFlagsContext).PdfContext;
 
     function generatePDF() {
-        const textareaOne = (document.getElementById('section-one-text-area') as HTMLInputElement).value;
-        const textareaTwo = (document.getElementById('section-two-text-area') as HTMLInputElement).value;
-        const textareaThree = (document.getElementById('section-three-text-area') as HTMLInputElement).value;
+        const sectionOneContent = "Driveway\n Patio\n Garden";
+        const sectionTwoContent = "Bedroom\n Bathroom\n Kithcen";
+        const sectionThreeContent = "Smoke Alarm\n Burglar Alarm,\n Carbon Monoxide Alarm\n Internet Speed\n Planning Permission";
+        const textareaOne = "Comments:" + " " + (document.getElementById('section-one-text-area') as HTMLInputElement).value;
+        const textareaTwo = "Comments:" + " " + (document.getElementById('section-two-text-area') as HTMLInputElement).value;
+        const textareaThree = "Comments:" + " " + (document.getElementById('section-three-text-area') as HTMLInputElement).value;
 
 
 
@@ -29,22 +32,31 @@ export default function ViewingChecklist() {
         pdf.text("Section One:", 20, 40);
 
         pdf.setFontSize(16)
-        pdf.text([sectionOneContent, textareaOne], 20, 50);
+        pdf.text(sectionOneContent, 20, 50);
+
+        pdf.setFontSize(16)
+        pdf.text(textareaOne, 20, 70);
 
         //Section Two
         pdf.setFontSize(22)
-        pdf.text("Section Two:", 20, 70);
+        pdf.text("Section Two:", 20, 90);
 
         pdf.setFontSize(16)
-        pdf.text([sectionTwoContent, textareaTwo], 20, 80);
+        pdf.text(sectionTwoContent, 20, 100);
+
+        pdf.setFontSize(16)
+        pdf.text(textareaTwo, 20, 120);
 
         //Section Three
 
         pdf.setFontSize(22)
-        pdf.text("Section Three:", 20, 100);
+        pdf.text("Section Three:", 20, 140);
 
         pdf.setFontSize(16)
-        pdf.text([sectionThreeContent, textareaThree], 20, 110);
+        pdf.text(sectionThreeContent, 20, 150);
+
+        pdf.setFontSize(16)
+        pdf.text(textareaThree, 20, 185);
 
         pdf.save('property_viewing_checklist_report.pdf');
 
@@ -118,15 +130,15 @@ export default function ViewingChecklist() {
                                 <h3>Section 3: Miscellaneous</h3>
                                 <div id="id-1">
                                     <input type="checkbox" id="burglar-alarm" name="burglar-alarm" value="burglar-alarm" />
-                                    <label>Bedroom</label>
+                                    <label>Burglar Alarm</label>
                                 </div>
                                 <div id="id-2">
                                     <input type="checkbox" id="smoke-alarm" name="smoke-alarm" value="smoke-alarm" />
-                                    <label>Bathroom</label>
+                                    <label>Smoke Alarm</label>
                                 </div>
                                 <div id="id-3">
                                     <input type="checkbox" id="carbon-monoxide-alarm" name="carbon-monoxide-alarm" value="carbon-monoxide-alarm" />
-                                    <label>Kitchen</label>
+                                    <label>Carbon Monoxide Alarm</label>
                                 </div>
                                 <div id="id-4">
                                     <input type="checkbox" id="internet-speed" name="internet-speed" value="internet-speed" />

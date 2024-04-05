@@ -9,6 +9,7 @@ import MaximumBorrowingAmount from './components/MaximumBorrowingAmount'
 import Disclaimer from './components/Disclaimer'
 import { FeatureFlagsContext } from "../src/components/FeatureFlags";
 import { useContext } from 'react'
+import LoginForm from './components/LoginForm'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
   const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
   const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
   const navigation = useContext(FeatureFlagsContext).renderNavigationBar;
+  const login = useContext(FeatureFlagsContext).renderLogin;
 
   return (
     <>
@@ -26,6 +28,9 @@ function App() {
         </div>
         <br></br>
         <div className='content'>
+          {login &&
+            <LoginForm />
+          }
           {
             navigation &&
             <Navigation />

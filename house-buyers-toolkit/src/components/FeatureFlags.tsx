@@ -6,5 +6,6 @@ export const FeatureFlagsContext = createContext({
     renderViewingChecklist: true,
     renderMaximumBorrowingAmount: true,
     renderMonthlyRepaymentCalculator: true,
+    renderLogin: true,
     otherFeature: true, // Example for another feature flag
 })
