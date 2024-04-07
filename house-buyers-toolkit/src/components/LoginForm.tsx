@@ -1,49 +1,23 @@
 import { useState } from "react";
+import dotenv from 'dotenv';
 
 export default function LoginForm() {
-    //const [existingUser, setExistingUser] = useState(false);
+    const netlifyIdentity = require('netlify-identity-widget');
 
-    const [isActive, setIsActive] = useState(true);
 
-    const userName = 'john@appleseed.com';
-    const passWord = 'wording123'
+    netlifyIdentity.init({
+        container: '#netlify-modal', // defaults to document.body
+        locale: 'en' // defaults to 'en'
+    });
 
-    function checkAuth() {
-        const emailId = (document.getElementById("email") as HTMLInputElement).value;
-        const passwordValue = (document.getElementById("password") as HTMLInputElement).value;
-
-        if (emailId == userName && passwordValue == passWord) {
-            return hideForm(true);
-        } else {
-            return false
-        }
-    }
-
-    function hideForm(formValue: boolean) {
-        if (formValue == false) {
-            setIsActive(false)
-        }
-    }
+    netlifyIdentity.open(); // open the modal
 
 
     return (
-        <div className="login-form-component">
-            {isActive &&
-                <div className="login-form-overlay">
-                    <div id="login-form">
-                        <h2>Login/Register</h2>
-                        <label htmlFor="email"> Email: </label>
-                        <br></br>
-                        <input type="text" id="email" />
-                        <br></br>
-                        <label htmlFor="password">Password</label>
-                        <br></br>
-                        <input type="password" id="password" />
-                        <br></br>
-                        <button type="submit" onSubmit={() => checkAuth()}>Login</button>
-                    </div>
-                </div>
-            }
-        </div>
+        <>
+            <h2>Login</h2>
+
+        </>
+
     )
 }
