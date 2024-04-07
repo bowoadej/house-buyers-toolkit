@@ -10,6 +10,7 @@ import Disclaimer from './components/Disclaimer'
 import { FeatureFlagsContext } from "../src/components/FeatureFlags";
 import { useContext } from 'react'
 import LoginForm from './components/LoginForm'
+import Header from './components/Header'
 
 function App() {
 
@@ -17,20 +18,12 @@ function App() {
   const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
   const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
   const navigation = useContext(FeatureFlagsContext).renderNavigationBar;
-  const login = useContext(FeatureFlagsContext).renderLogin;
 
   return (
     <>
       <div className='body'>
-        <div className='header'>
-          <h1>House Buyers Toolkit</h1>
-          <Disclaimer />
-        </div>
-        <br></br>
+        <Header />
         <div className='content'>
-          {login &&
-            <LoginForm />
-          }
           {
             navigation &&
             <Navigation />
