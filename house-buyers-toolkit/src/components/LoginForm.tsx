@@ -1,22 +1,25 @@
 import { useState } from "react";
 import dotenv from 'dotenv';
 
-export default function LoginForm() {
-    const netlifyIdentity = require('netlify-identity-widget');
 
+export default function LoginForm(expand: boolean) {
 
-    netlifyIdentity.init({
-        container: '#netlify-modal', // defaults to document.body
-        locale: 'en' // defaults to 'en'
-    });
+    const [isActive, setIsActive] = useState(expand)
 
-    netlifyIdentity.open(); // open the modal
-
+    function closePopup() {
+        setIsActive(false);
+    }
 
     return (
         <>
-            <h2>Login</h2>
-
+            <div className="form-popup">
+                <div className="form-container">
+                    <h2>Login</h2>
+                    <input type="text" placeholder="Username" />
+                    <input type="text" placeholder="Password" />
+                    <button onClick={() => closePopup()} />
+                </div>
+            </div>
         </>
 
     )
