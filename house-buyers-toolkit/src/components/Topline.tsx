@@ -8,14 +8,22 @@ export default function Topline() {
 
     const login = useContext(FeatureFlagsContext).renderLogin;
 
-
+    /*
+    function handleClick(auth: boolean){
+    if user(isLogged){
+        userSession.logout()
+    } else {
+        userSession.login()
+    }
+    }
+    */
 
     return (
         <div className="topline">
             <ul>
                 <li><h3 id="loggedIn" className="loggedInText">
                     {isLoggedIn && login ?
-                        'Hi PLACEHOLDER_NAME' : 'Login'
+                        'Logout' : 'Login'
                     }
                 </h3>
                 </li>

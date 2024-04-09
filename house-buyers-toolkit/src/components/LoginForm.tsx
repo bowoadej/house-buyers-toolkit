@@ -4,14 +4,14 @@ import dotenv from 'dotenv';
 
 export default function LoginForm(expand: boolean) {
 
-    const [isActive, setIsActive] = useState(expand)
+    const [isActive, setIsActive] = useState(true)
 
     function closePopup() {
         setIsActive(false);
     }
 
     return (
-        <>
+        <>{isActive &&
             <div className="form-popup">
                 <div className="form-container">
                     <h2>Login</h2>
@@ -20,6 +20,7 @@ export default function LoginForm(expand: boolean) {
                     <button onClick={() => closePopup()} />
                 </div>
             </div>
+        }
         </>
 
     )
