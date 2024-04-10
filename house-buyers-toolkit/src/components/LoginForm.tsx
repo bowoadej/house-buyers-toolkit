@@ -1,23 +1,37 @@
 import { useState } from "react";
 import dotenv from 'dotenv';
 
+interface loginFormProps {
+    expand: boolean;
+}
 
-export default function LoginForm(expand: boolean) {
+export default function LoginForm(props: loginFormProps) {
 
-    const [isActive, setIsActive] = useState(true)
+    var show: boolean = props.expand;
+
+    const [isActive, setIsActive] = useState(show)
 
     function closePopup() {
-        setIsActive(false);
+
+        show = false
+        setIsActive(show);
     }
 
     return (
         <>{isActive &&
-            <div className="form-popup">
-                <div className="form-container">
-                    <h2>Login</h2>
-                    <input type="text" placeholder="Username" />
-                    <input type="text" placeholder="Password" />
-                    <button onClick={() => closePopup()} />
+            <div className="form-overlay">
+                <div className="form-popup">
+                    <div className="form-container">
+                        <h2>Login</h2>
+                        <label htmlFor="username">Username</label>
+                        <input type="text" className="username" placeholder="Username" />
+                        <br />
+                        <label htmlFor="password">Password</label>
+                        <input type="text" className="password" placeholder="Password" />
+                        <br />
+                        <br></br>
+                        <button id="close" className="close" onClick={() => closePopup()}>Close</button>
+                    </div>
                 </div>
             </div>
         }
