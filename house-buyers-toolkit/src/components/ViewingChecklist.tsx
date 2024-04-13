@@ -2,7 +2,6 @@ import { useState } from "react";
 import jsPDF from 'jspdf';
 import { useContext } from "react";
 import { FeatureFlagsContext } from "./FeatureFlags";
-import { text } from "stream/consumers";
 
 
 export default function ViewingChecklist() {

@@ -7,8 +7,7 @@ export default function Topline() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loginButtonClick, setloginButtonClick] = useState(false);
 
-
-    const login = useContext(FeatureFlagsContext).renderLogin;
+    console.log("The Login button is" + " " + loginButtonClick);
 
     /*
     function handleClick(auth: boolean){
@@ -23,17 +22,12 @@ export default function Topline() {
 
     function handleLoginButton() {
         if (loginButtonClick) {
-            return <LoginForm expand={true} />
-        } else {
-            return <LoginForm expand={false} />
+            return <LoginForm expand={true} onCloseButtonClick={() => setloginButtonClick(false)} />
         }
     }
     function setButtonClick() {
-        if (!loginButtonClick) {
-            setloginButtonClick(true);
-        } else {
-            setloginButtonClick(false);
-        }
+        setloginButtonClick((prevClickState) => !prevClickState); // Toggle state
+        console.log("The Login button is" + " " + loginButtonClick);
     }
 
     return (
