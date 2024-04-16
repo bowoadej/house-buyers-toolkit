@@ -1,7 +1,7 @@
 import { useState } from "react";
 import jsPDF from 'jspdf';
 import { useContext } from "react";
-import { FeatureFlagsContext } from "./FeatureFlags";
+import { FeatureFlagsContext } from "../utils/FeatureFlags";
 
 
 export default function ViewingChecklist() {

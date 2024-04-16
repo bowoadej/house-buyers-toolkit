@@ -1,6 +1,14 @@
-import React from "react";
+import { createContext } from "react";
 
-export interface AuthContextInterface {
+
+export const AuthContextDetails = createContext({
+    userId: null,
+    isLoggedIn: false
+    //oai: string, obfuscated account id
+
+});
+
+/*export interface AuthContextInterface {
     id: number | null; //example-id
     access_token: string | null; //jwt-token
     tokenType: string | null;
@@ -24,5 +32,5 @@ export const authContextDefaults: AuthContextInterface = {
 
 export const AuthContext = React.createContext<AuthContextInterface>(
     authContextDefaults
-);
+);*/
 

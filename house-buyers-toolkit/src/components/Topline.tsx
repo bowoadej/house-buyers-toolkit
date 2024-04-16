@@ -1,4 +1,4 @@
-import { FeatureFlagsContext } from "./FeatureFlags";
+import { FeatureFlagsContext } from "../utils/FeatureFlags";
 import { useContext, useState } from "react";
 import LoginForm from "./LoginForm";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import dotenv from 'dotenv';
 import { useContext } from "react";
-import { FeatureFlagsContext } from "./FeatureFlags";
+import { FeatureFlagsContext } from "../utils/FeatureFlags";
+import { AuthContextDetails } from "../utils/AuthContext";
 
 interface loginFormProps {
     expand: boolean,
@@ -16,6 +16,7 @@ interface loginFormData {
 
 export default function LoginForm(props: loginFormProps) {
 
+    //const [userContext, setUserContext] = useContext(AuthContextDetails);
 
     const loginFormDataDefaults: loginFormData = {
         username: '',
@@ -34,6 +35,7 @@ export default function LoginForm(props: loginFormProps) {
 
             if (userName === userName && password === password) {
                 console.log("Customer has logged in.")
+
             } else {
                 console.log("Customer has an issue logged in")
             }
