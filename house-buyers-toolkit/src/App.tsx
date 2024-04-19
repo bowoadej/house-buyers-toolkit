@@ -7,10 +7,10 @@ import Navigation from './components/Navigation'
 import MonthlyRepaymentCalculator from './components/MonthlyRepaymentCalculator'
 import MaximumBorrowingAmount from './components/MaximumBorrowingAmount'
 import Disclaimer from './components/Disclaimer'
-import { FeatureFlagsContext } from "../src/components/FeatureFlags";
+import { FeatureFlagsContext } from "./utils/FeatureFlags";
 import { useContext } from 'react'
-import LoginForm from './components/LoginForm'
 import Header from './components/Header'
+import Topline from './components/Topline'
 
 function App() {
 
@@ -18,16 +18,21 @@ function App() {
   const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
   const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
   const navigation = useContext(FeatureFlagsContext).renderNavigationBar;
+  const login = useContext(FeatureFlagsContext).renderLogin;
 
   return (
     <>
       <div className='body'>
+        {login &&
+          <Topline />
+        }
         <Header />
+        {
+          navigation &&
+          <Navigation />
+        }
         <div className='content'>
-          {
-            navigation &&
-            <Navigation />
-          }
+
           {checklist &&
             <ViewingChecklist />
           }
