@@ -23,7 +23,10 @@ function App() {
     <>
       <div className='body'>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         <p>THIS IS A TEST OF THE PLATFORM</p>
         {login &&
           <Topline />
