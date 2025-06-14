@@ -1,12 +1,7 @@
-import { createContext } from "react";
-
-
-export const AuthContextDetails = createContext({
-    userId: null,
-    isLoggedIn: false
-    //oai: string, obfuscated account id
-
-});
+export interface User{
+    userId: string,
+    
+}
 
 /*export interface AuthContextInterface {
     id: number | null; //example-id

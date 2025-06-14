@@ -7,10 +7,10 @@ import Navigation from './components/Navigation'
 import MonthlyRepaymentCalculator from './components/MonthlyRepaymentCalculator'
 import MaximumBorrowingAmount from './components/MaximumBorrowingAmount'
 import Disclaimer from './components/Disclaimer'
-import { FeatureFlagsContext } from "./utils/FeatureFlags";
+import { FeatureFlagsContext } from "../src/components/FeatureFlags";
 import { useContext } from 'react'
+import LoginForm from './components/LoginForm'
 import Header from './components/Header'
-import Topline from './components/Topline'
 
 function App() {
 
@@ -18,21 +18,26 @@ function App() {
   const calculator = useContext(FeatureFlagsContext).renderMonthlyRepaymentCalculator;
   const maximumborrowingamount = useContext(FeatureFlagsContext).renderMaximumBorrowingAmount;
   const navigation = useContext(FeatureFlagsContext).renderNavigationBar;
-  const login = useContext(FeatureFlagsContext).renderLogin;
 
   return (
     <>
       <div className='body'>
-        {login &&
-          <Topline />
-        }
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> Stashed changes
+  {
+    login &&
+      <Topline />
+  }
+>>>>>>> Stashed changes
         <Header />
-        {
-          navigation &&
-          <Navigation />
-        }
         <div className='content'>
-
+          {
+            navigation &&
+            <Navigation />
+          }
           {checklist &&
             <ViewingChecklist />
           }
@@ -43,13 +48,13 @@ function App() {
             <MonthlyRepaymentCalculator />
           }
           <br></br>
-          <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe</a></div>
+          <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe.</a>Copyright 2025. All rights reserved</div>
           <br></br>
           <Disclaimer />
         </div>
-      </div>
+      </div >
     </>
   )
 }
 
-export default App
+export default App 
