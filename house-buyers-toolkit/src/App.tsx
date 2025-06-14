@@ -48,7 +48,7 @@ function App() {
             <MonthlyRepaymentCalculator />
           }
           <br></br>
-          <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe</a></div>
+          <div className='footer'>A Toolkit Created By <a href='https://bowoadej.com'>Bowo Adejuyigbe</a>Dopyright 2025</div>
           <br></br>
           <Disclaimer />
         </div>
