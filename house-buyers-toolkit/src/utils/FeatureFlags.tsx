@@ -7,5 +7,6 @@ export const FeatureFlagsContext = createContext({
     renderMaximumBorrowingAmount: true, //Enables the Maximum Borrowing Amount component
     renderMonthlyRepaymentCalculator: true, // Enables the Monthly Repayment Calculator
     renderLogin: false, //Enables the render login component
-    otherFeature: true, // Example for another feature flag // Enables the other feature
+    otherFeature: true, // Example for another feature flag enables the other feature
+    placeHolderAuth: false, //Using a feature flag which provides the placeHolderAuth
 })
