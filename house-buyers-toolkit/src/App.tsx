@@ -27,10 +27,11 @@ function App() {
 =======
 =======
 >>>>>>> Stashed changes
-        <p>THIS IS A TEST OF THE PLATFORM</p>
-        {login &&
-          <Topline />
-        }
+  <p>This is another time of changing </p>
+  {
+    login &&
+      <Topline />
+  }
 >>>>>>> Stashed changes
         <Header />
         <div className='content'>
@@ -52,7 +53,7 @@ function App() {
           <br></br>
           <Disclaimer />
         </div>
-      </div>
+      </div >
     </>
   )
 }
