@@ -28,6 +28,7 @@ function App() {
 =======
 >>>>>>> Stashed changes
   <p>This is another time of changing </p>
+  <p>This is another test change</p>
   {
     login &&
       <Topline />
