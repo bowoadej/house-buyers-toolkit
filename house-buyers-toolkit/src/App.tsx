@@ -22,6 +22,13 @@ function App() {
   return (
     <>
       <div className='body'>
+<<<<<<< Updated upstream
+=======
+        <p>THIS IS A TEST OF THE PLATFORM</p>
+        {login &&
+          <Topline />
+        }
+>>>>>>> Stashed changes
         <Header />
         <div className='content'>
           {
