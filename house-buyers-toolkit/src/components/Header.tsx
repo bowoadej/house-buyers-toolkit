@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='header-container'>
-                <h1>House Buyers Toolkit</h1>
+                <h1>Homely: House Buyers Toolkit</h1>
                 <div className="subheading">
                     <Disclaimer />
 
